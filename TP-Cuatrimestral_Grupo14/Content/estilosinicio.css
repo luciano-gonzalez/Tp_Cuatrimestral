@@ -1,0 +1,50 @@
+﻿.mesas-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 100px; /* Espacio entre las mesas */
+}
+
+.mesa {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+    color: white;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 50%;
+    margin-bottom: 1px; /* Espacio entre la mesa y el botón */
+}
+
+.cuadrada {
+    border-radius: 10px;
+}
+
+.rectangular {
+    width: 200px;
+    height: 100px;
+}
+
+.boton-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1px; /* Ajusta el margen superior para acercar el botón */
+}
+
+.boton {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+    .boton.verde {
+        background-color: green;
+    }
+
+    .boton.rojo {
+        background-color: red;
+    }
