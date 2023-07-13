@@ -14,6 +14,7 @@ namespace Negocio
 {
     public class RestoNegocio
     {
+        ///funciones pedidos aspx
         public List<Insumo> listarinsumo()
         {
             List<Insumo> lista = new List<Insumo>();
@@ -133,7 +134,7 @@ namespace Negocio
         }
 
 
-
+        
 
         public float Getprecioplatos(int idplato)
         {
@@ -188,9 +189,7 @@ namespace Negocio
 
         }
 
-
-
-
+        ///
 
 
 

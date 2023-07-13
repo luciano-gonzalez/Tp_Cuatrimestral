@@ -156,8 +156,8 @@
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Mesa.aspx" />
     <Content Include="Scripts\botones.js" />
-    <Content Include="WebForm2.aspx" />
-    <Content Include="WebForm3.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="MenuIngreso.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -247,19 +247,19 @@
     <Compile Include="Mesa.aspx.designer.cs">
       <DependentUpon>Mesa.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm2.aspx.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm2.aspx.designer.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm3.aspx.cs">
-      <DependentUpon>WebForm3.aspx</DependentUpon>
+    <Compile Include="MenuIngreso.aspx.cs">
+      <DependentUpon>MenuIngreso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm3.aspx.designer.cs">
-      <DependentUpon>WebForm3.aspx</DependentUpon>
+    <Compile Include="MenuIngreso.aspx.designer.cs">
+      <DependentUpon>MenuIngreso.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -19,22 +19,34 @@ namespace TP_Cuatrimestral_Grupo14
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                // Declarar e inicializar los vectores en el Page_Load
+                string[] nombreClienteArray = new string[10];
+                string[] numeroMesaArray = new string[10];
+                string[] precioPlatoArray = new string[10];
+
+                // Guardar los vectores en la sesión
+                Session["NombreCliente"] = nombreClienteArray;
+                Session["NumeroMesa"] = numeroMesaArray;
+                Session["PrecioPlato"] = precioPlatoArray;
+            }
+
             try
             {
-
                 RestoNegocio restoNegocio = new RestoNegocio();
 
-                    listaPlatos = restoNegocio.listarplatos();
-                    listaBebidas = restoNegocio.listarcbebidas();
+                listaPlatos = restoNegocio.listarplatos();
+                listaBebidas = restoNegocio.listarcbebidas();
 
                 if (!IsPostBack)
                 {
-                    ddlPlatos.DataSource = restoNegocio.listarplatos();
+                    ddlPlatos.DataSource = listaPlatos;
                     ddlPlatos.DataTextField = "NombrePlato";
                     ddlPlatos.DataValueField = "IDPlato";
                     ddlPlatos.DataBind();
 
-                    ddlBebidas.DataSource = restoNegocio.listarcbebidas();
+                    ddlBebidas.DataSource = listaBebidas;
                     ddlBebidas.DataTextField = "Nombre";
                     ddlBebidas.DataValueField = "IDInsumo";
                     ddlBebidas.DataBind();
@@ -55,9 +67,9 @@ namespace TP_Cuatrimestral_Grupo14
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
+
 
         }
 
@@ -125,6 +137,8 @@ namespace TP_Cuatrimestral_Grupo14
                 float costoTotal = totalPlatos + totalBebidas;
 
                 TxtMonto.Text = "$" + costoTotal.ToString();
+                gvPlatosSeleccionados.Visible = false;
+                gvBebidasSeleccionadas.Visible = false;
             }
             catch (Exception ex)
             {
@@ -148,6 +162,50 @@ namespace TP_Cuatrimestral_Grupo14
             gvBebidasSeleccionadas.DataSource = bebidasSeleccionadas;
             gvBebidasSeleccionadas.DataBind();
 
+
+        }
+
+       
+        protected void ConfirmarPedido_Click(object sender, EventArgs e)
+        {
+            // Obtener los valores de los controles
+            string nombreCliente = Txtnombre.Text.Trim();
+            string numeroMesa = ddlmesa.SelectedValue;
+            string precioPlato = TxtMonto.Text.Trim();
+
+            // Validar si algún campo está vacío o tiene valor 0
+            if (string.IsNullOrEmpty(nombreCliente) || numeroMesa == "0" || precioPlato == "$0")
+            {
+                // Mostrar mensaje de advertencia
+                string script = "alert('Faltan completar campos o agregar platos/bebidas.');";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", script, true);
+                return;
+            }
+
+            // Convertir el número de mesa a un índice de vector
+            int index = int.Parse(numeroMesa) - 1;
+
+            // Obtener los vectores de la sesión
+            string[] nombreClienteArray = (string[])Session["NombreCliente"];
+            string[] numeroMesaArray = (string[])Session["NumeroMesa"];
+            string[] precioPlatoArray = (string[])Session["PrecioPlato"];
+
+            // Guardar los valores en los vectores correspondientes
+            nombreClienteArray[index] = nombreCliente;
+            numeroMesaArray[index] = numeroMesa;
+            precioPlatoArray[index] = precioPlato;
+
+            // Guardar los vectores actualizados en la sesión
+            Session["NombreCliente"] = nombreClienteArray;
+            Session["NumeroMesa"] = numeroMesaArray;
+            Session["PrecioPlato"] = precioPlatoArray;
+
+            // Restablecer los campos del formulario
+            Txtnombre.Text = string.Empty;
+            Txtdescripcion.Text = string.Empty;
+            TxtMonto.Text = "$" + 0.ToString();
+            platosSeleccionados.Clear();
+            bebidasSeleccionadas.Clear();
 
         }
     }

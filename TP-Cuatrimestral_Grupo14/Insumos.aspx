@@ -39,19 +39,19 @@
             <ul class="nav">
                 <li id="btnConocimientos">
                     <a href="#">
-                        <i class="fa-solid fa-brain"></i>
+                        <i class="fa-solid fa-burger"></i>
                         <div class="tooltip">Stock</div>
                     </a>
                 </li>
                 <li id="btnProyectos">
                     <a href="#">
-                        <i class="fa-solid fa-diagram-project"></i>
+                        <i class="fa-solid fa-bottle-water"></i>
                         <div class="tooltip">bebidas</div>
                     </a>
                 </li>
                 <li class="active" id="btnMenu">
                     <a href="#">
-                        <i class="fa-solid fa-user"></i>
+                        <i class="fa-solid fa-carrot"></i>
                         <div class="tooltip">Insumo</div>
                     </a>
                 </li>
@@ -65,7 +65,7 @@
         <div class="contenido">
              <h1>Stock de Insumos</h1>
             
-            <asp:GridView ID="gvStockInsumos" runat="server" CssClass="grid-view" AutoGenerateColumns="false">
+            <asp:GridView ID="gvStockInsumos" runat="server" CssClass="table" AutoGenerateColumns="false">
                 <Columns>
                     <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
                     <asp:BoundField DataField="Stock" HeaderText="Stock Total" />
@@ -77,7 +77,7 @@
     <div class="container_Conocimiento" id="contConocimiento">
         <div class="contenido">
             <h1>Stock de Platos</h1>
-            <asp:GridView ID="gvStockPlatos" runat="server" CssClass="grid-view" AutoGenerateColumns="false">
+            <asp:GridView ID="gvStockPlatos" runat="server" CssClass="table" AutoGenerateColumns="false">
                 <Columns>
                     <asp:BoundField DataField="NombrePlato" HeaderText="Nombre del Plato" />
                     <asp:BoundField DataField="StockTotalPlato" HeaderText="Stock Total del Plato" />
@@ -88,7 +88,7 @@
     <div class="container_Proyectos" id="contProyectos">
         <div class="contenido">
             <h1>Stock de Bebidas</h1>
-            <asp:GridView ID="gvStockBebidas" runat="server" CssClass="grid-view" AutoGenerateColumns="false">
+            <asp:GridView ID="gvStockBebidas" runat="server" CssClass="table" AutoGenerateColumns="false">
                 <Columns>
                     <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
                     <asp:BoundField DataField="StockTotalBebidas" HeaderText="Stock Total de Bebidas" />

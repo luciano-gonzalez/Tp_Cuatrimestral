@@ -32,7 +32,8 @@
                     </div>
                     <div class="mb-3">
                         <label for="Txtmesa" class="form-label">Mesa</label>
-                        <asp:DropDownList CssClass="btn btn-secondary" runat="server">
+                        <asp:DropDownList CssClass="btn btn-secondary" runat="server" ID="ddlmesa">
+                            <asp:ListItem Text="0" />
                             <asp:ListItem Text="1" />
                             <asp:ListItem Text="2" />
                             <asp:ListItem Text="3" />
@@ -60,7 +61,7 @@
             </div>          
                 
             <div>
-                <asp:Button CssClass="btn btn-success" Text="confirmar pedido" runat="server" />
+                <asp:Button CssClass="btn btn-success" Text="confirmar pedido" runat="server" ID="ConfirmarPedido" OnClick="ConfirmarPedido_Click" />
             </div>
 
 

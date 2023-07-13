@@ -78,6 +78,15 @@ namespace TP_Cuatrimestral_Grupo14
         protected global::System.Web.UI.WebControls.TextBox Txtnombre;
 
         /// <summary>
+        /// Control ddlmesa.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlmesa;
+
+        /// <summary>
         /// Control TxtMonto.
         /// </summary>
         /// <remarks>
@@ -103,6 +112,15 @@ namespace TP_Cuatrimestral_Grupo14
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_reset;
+
+        /// <summary>
+        /// Control ConfirmarPedido.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ConfirmarPedido;
 
         /// <summary>
         /// Control gvPlatosSeleccionados.

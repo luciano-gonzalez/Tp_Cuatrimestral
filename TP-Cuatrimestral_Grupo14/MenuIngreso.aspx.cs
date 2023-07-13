@@ -11,6 +11,12 @@ namespace TP_Cuatrimestral_Grupo14
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["usuario"] == null)
+            {
+                Session.Add("error","debes ingresarte para ingresar");
+                Response.Redirect("Login.aspx",false);
+
+            }
 
         }
     }
